@@ -8,7 +8,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/loov/goda/internal/pkggraph"
+	"github.com/alexuserid/goda/internal/pkggraph"
 )
 
 type Mermaid struct {

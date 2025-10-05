@@ -10,14 +10,14 @@ import (
 
 	"github.com/google/subcommands"
 
-	"github.com/loov/goda/internal/cut"
-	"github.com/loov/goda/internal/exec"
-	"github.com/loov/goda/internal/graph"
-	"github.com/loov/goda/internal/list"
-	"github.com/loov/goda/internal/pkgset"
-	"github.com/loov/goda/internal/tree"
-	"github.com/loov/goda/internal/weight"
-	"github.com/loov/goda/internal/weightdiff"
+	"github.com/alexuserid/goda/internal/cut"
+	"github.com/alexuserid/goda/internal/exec"
+	"github.com/alexuserid/goda/internal/graph"
+	"github.com/alexuserid/goda/internal/list"
+	"github.com/alexuserid/goda/internal/pkgset"
+	"github.com/alexuserid/goda/internal/tree"
+	"github.com/alexuserid/goda/internal/weight"
+	"github.com/alexuserid/goda/internal/weightdiff"
 )
 
 func main() {

@@ -6,7 +6,7 @@ import (
 
 	"golang.org/x/tools/go/packages"
 
-	"github.com/loov/goda/internal/stat"
+	"github.com/alexuserid/goda/internal/stat"
 )
 
 type Graph struct {

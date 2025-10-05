@@ -1,4 +1,4 @@
-module github.com/loov/goda
+module github.com/alexuserid/goda
 
 go 1.24.0
 

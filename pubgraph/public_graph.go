@@ -3,8 +3,8 @@ package pubgraph
 import (
 	"context"
 
+	"github.com/alexuserid/goda/internal/graph"
 	"github.com/google/subcommands"
-	"github.com/loov/goda/internal/graph"
 )
 
 type Config struct {

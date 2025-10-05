@@ -11,8 +11,8 @@ import (
 	"github.com/google/subcommands"
 	"golang.org/x/tools/go/packages"
 
-	"github.com/loov/goda/internal/pkgset"
-	"github.com/loov/goda/internal/templates"
+	"github.com/alexuserid/goda/internal/pkgset"
+	"github.com/alexuserid/goda/internal/templates"
 )
 
 type Command struct {
