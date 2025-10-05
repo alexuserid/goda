@@ -71,19 +71,19 @@ func (ctx *Dot) TreePackageLabel(tp *pkgtree.Package, parentPrinted bool) string
 }
 
 func (ctx *Dot) RepoRef(repo *pkgtree.Repo) string {
-	return fmt.Sprintf(`href=%q`, ctx.docs+repo.Path())
+	return fmt.Sprintf(`href=%q`, "")
 }
 
 func (ctx *Dot) ModuleRef(mod *pkgtree.Module) string {
-	return fmt.Sprintf(`href=%q`, ctx.docs+mod.Path()+"@"+mod.Mod.Version)
+	return fmt.Sprintf(`href=%q`, "")
 }
 
 func (ctx *Dot) TreePackageRef(tp *pkgtree.Package) string {
-	return fmt.Sprintf(`href=%q`, ctx.docs+tp.Path())
+	return fmt.Sprintf(`href=%q`, "")
 }
 
 func (ctx *Dot) Ref(p *pkggraph.Node) string {
-	return fmt.Sprintf(`href=%q`, ctx.docs+p.ID)
+	return fmt.Sprintf(`href=%q`, "")
 }
 
 func (ctx *Dot) writeGraphProperties() {
