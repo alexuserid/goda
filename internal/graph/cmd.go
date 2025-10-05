@@ -4,6 +4,7 @@ import (
 	"context"
 	"flag"
 	"fmt"
+	"io"
 	"os"
 	"strconv"
 	"strings"
@@ -28,6 +29,9 @@ type Command struct {
 
 	clusters bool
 	shortID  bool
+
+	out io.Writer
+	err io.Writer
 }
 
 func (*Command) Name() string     { return "graph" }
@@ -68,6 +72,9 @@ func (cmd *Command) SetFlags(f *flag.FlagSet) {
 
 	f.BoolVar(&cmd.clusters, "cluster", false, "create clusters")
 	f.BoolVar(&cmd.shortID, "short", false, "use short package id-s inside clusters")
+
+	cmd.out = os.Stdout
+	cmd.err = os.Stderr
 }
 
 func (cmd *Command) Execute(ctx context.Context, f *flag.FlagSet, _ ...interface{}) subcommands.ExitStatus {
@@ -90,8 +97,9 @@ func (cmd *Command) Execute(ctx context.Context, f *flag.FlagSet, _ ...interface
 	switch strings.ToLower(cmd.outputType) {
 	case "dot":
 		format = &Dot{
-			out:      os.Stdout,
-			err:      os.Stderr,
+			// Keep it in only one case since I don't want modify the code a lot
+			out:      cmd.out,
+			err:      cmd.err,
 			docs:     cmd.docs,
 			clusters: cmd.clusters,
 			nocolor:  cmd.nocolor,

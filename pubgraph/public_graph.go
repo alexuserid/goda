@@ -1,10 +1,11 @@
 package pubgraph
 
 import (
+	"bytes"
 	"context"
+	"io"
 
 	"github.com/alexuserid/goda/internal/graph"
-	"github.com/google/subcommands"
 )
 
 type Config struct {
@@ -16,6 +17,7 @@ type Config struct {
 	Clusters       bool
 	ShortID        bool
 	Path           string
+	Out            io.Writer
 }
 
 func DefaultConfig() Config {
@@ -28,10 +30,11 @@ func DefaultConfig() Config {
 		Clusters:       true,
 		ShortID:        true,
 		Path:           "./...:mod",
+		Out:            bytes.NewBuffer([]byte{}),
 	}
 }
 
-func ExecuteGraph(ctx context.Context, config *Config) subcommands.ExitStatus {
+func ExecuteGraph(ctx context.Context, config *Config) error {
 	c := DefaultConfig()
 	if config != nil {
 		c = *config
