@@ -19,7 +19,7 @@ type Config struct {
 	Clusters       bool
 	ShortID        bool
 	Path           string
-	Out            io.Writer
+	Out            io.ReadWriter
 }
 
 func ExecuteGraph(ctx context.Context, config Config) error {
